@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { NAV_ITEMS, SECTION_IDS, COMPANY } from "@/lib/constants";
 import { EASE_PREMIUM } from "@/lib/motion";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -93,24 +94,34 @@ export default function Navbar() {
           })}
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setMenuOpen((open) => !open)}
-          className="md:hidden flex h-8 w-8 flex-col items-center justify-center gap-1.5"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          <span
-            className={`h-px w-4 bg-foreground transition-transform duration-300 ${
-              menuOpen ? "translate-y-[3px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-px w-4 bg-foreground transition-transform duration-300 ${
-              menuOpen ? "-translate-y-[3px] -rotate-45" : ""
-            }`}
-          />
-        </button>
+        <div className="flex shrink-0 items-center gap-3">
+          <MagneticButton
+            href="#contact"
+            variant="primary"
+            className="hidden !px-4 !py-2 text-xs sm:!px-5 md:inline-flex"
+          >
+            Book a Demo
+          </MagneticButton>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="md:hidden flex h-8 w-8 flex-col items-center justify-center gap-1.5"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <span
+              className={`h-px w-4 bg-foreground transition-transform duration-300 ${
+                menuOpen ? "translate-y-[3px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-px w-4 bg-foreground transition-transform duration-300 ${
+                menuOpen ? "-translate-y-[3px] -rotate-45" : ""
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
@@ -121,6 +132,13 @@ export default function Navbar() {
           transition={{ duration: 0.3, ease: EASE_PREMIUM }}
           className="absolute left-4 right-4 top-[calc(100%+0.5rem)] flex flex-col rounded-2xl border border-white/10 bg-black/80 p-2 backdrop-blur-xl md:hidden"
         >
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="mb-1 rounded-xl bg-foreground px-4 py-3 text-center text-sm font-medium text-bg transition-colors hover:bg-silver"
+          >
+            Book a Demo
+          </a>
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}

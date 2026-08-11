@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { BUDGET_OPTIONS, SOCIAL_LINKS } from "@/lib/constants";
 import { fadeUp, fadeUpStagger, staggerChildren } from "@/lib/motion";
+import ResponseBadge from "@/components/ui/ResponseBadge";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -15,6 +17,7 @@ const SOCIAL_ROW = [
 ];
 
 export default function Contact() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -51,6 +54,7 @@ export default function Contact() {
 
       setStatus("success");
       form.reset();
+      router.push("/thank-you");
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
@@ -166,9 +170,8 @@ export default function Contact() {
             {status === "loading" ? "Sending…" : "Let's Build Something Exceptional"}
           </button>
 
-          {status === "success" && (
-            <p className="text-sm text-silver">Thanks — we&rsquo;ll be in touch shortly.</p>
-          )}
+          <ResponseBadge />
+
           {status === "error" && (
             <p className="text-sm text-silver-dim">{errorMessage}</p>
           )}

@@ -5,11 +5,12 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Services", href: "#services" },
   { label: "Technology", href: "#technology" },
   { label: "About", href: "#about" },
   { label: "Echo", href: "#echo" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -59,7 +60,7 @@ export const PROJECTS: Project[] = [
     description:
       "Echo answers every call, takes the order, and pushes it straight to the kitchen — in any language, at any volume.",
     demoHref: "#contact",
-    caseStudyHref: "#contact",
+    caseStudyHref: "/case-studies/echo",
   },
 ];
 
@@ -161,6 +162,20 @@ export const BUDGET_OPTIONS: BudgetOption[] = [
   { label: "$50k – $150k", value: "50k-150k" },
   { label: "$150k+", value: "150k-plus" },
   { label: "Not sure yet", value: "unsure" },
+];
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  photo?: string;
+};
+
+// Placeholder roster — swap in real names, roles, and photos (drop images in
+// /public/team/ and set `photo` to the path) whenever they're ready.
+export const TEAM_MEMBERS: TeamMember[] = [
+  { name: "Add Name", role: "Founder / Role" },
+  { name: "Add Name", role: "Engineering / Role" },
+  { name: "Add Name", role: "Product / Role" },
 ];
 
 export type TechLayerData = {

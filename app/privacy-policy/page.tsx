@@ -12,7 +12,11 @@ const UPDATED = "August 5, 2026";
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalLayout title="Privacy Policy" updated={UPDATED}>
+    <LegalLayout
+      title="Privacy Policy"
+      updated={UPDATED}
+      breadcrumb={[{ label: "Privacy Policy", href: "/privacy-policy" }]}
+    >
       <LegalSection title="1. Overview">
         <p>
           This Privacy Policy explains how [Legal Entity Name] (&ldquo;Cosecant,&rdquo;

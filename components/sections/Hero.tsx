@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
+import ResponseBadge from "@/components/ui/ResponseBadge";
 import { fadeUpStagger, staggerChildren, EASE_PREMIUM } from "@/lib/motion";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
@@ -90,17 +91,21 @@ export default function Hero() {
           variants={fadeUpStagger()}
           className="mt-12 flex flex-wrap items-center gap-4"
         >
-          <MagneticButton href="#projects" variant="primary">
-            View Projects
+          <MagneticButton href="#portfolio" variant="primary">
+            View Portfolio
           </MagneticButton>
           <MagneticButton href="#contact" variant="secondary">
             Book a Demo
           </MagneticButton>
         </motion.div>
+
+        <motion.div variants={fadeUpStagger()} className="mt-6">
+          <ResponseBadge />
+        </motion.div>
       </motion.div>
 
       <motion.a
-        href="#projects"
+        href="#portfolio"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}

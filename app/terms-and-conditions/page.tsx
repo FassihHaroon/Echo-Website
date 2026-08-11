@@ -12,7 +12,11 @@ const UPDATED = "August 5, 2026";
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms & Conditions" updated={UPDATED}>
+    <LegalLayout
+      title="Terms & Conditions"
+      updated={UPDATED}
+      breadcrumb={[{ label: "Terms & Conditions", href: "/terms-and-conditions" }]}
+    >
       <LegalSection title="1. Agreement">
         <p>
           These Terms & Conditions (&ldquo;Terms&rdquo;) govern your use of the

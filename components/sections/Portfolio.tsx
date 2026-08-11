@@ -6,10 +6,10 @@ import { fadeUp } from "@/lib/motion";
 import ProjectCard from "@/components/ui/ProjectCard";
 import CallTranscriptMockup from "@/components/echo/CallTranscriptMockup";
 
-export default function Projects() {
+export default function Portfolio() {
   return (
     <section
-      id="projects"
+      id="portfolio"
       className="relative border-t border-white/5 bg-bg px-6 py-24 sm:px-8 sm:py-32"
     >
       <div className="mx-auto w-full max-w-6xl">
@@ -21,7 +21,7 @@ export default function Projects() {
           className="mb-16 max-w-xl"
         >
           <span className="text-xs uppercase tracking-[0.2em] text-silver-dim">
-            Projects
+            Portfolio
           </span>
           <h2 className="mt-4 text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
             Software built to run in production, not a demo.

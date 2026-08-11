@@ -6,6 +6,7 @@ import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
+import SiteLoader from "@/components/layout/SiteLoader";
 import { buildMetadata, SITE_URL, SITE_NAME } from "@/lib/seo";
 
 const geistSans = Geist({
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <MotionConfig reducedMotion="user">
+          <SiteLoader />
           <SmoothScrollProvider>
             <CustomCursor />
             <Navbar />
