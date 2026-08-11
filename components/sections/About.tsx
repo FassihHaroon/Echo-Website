@@ -23,9 +23,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative border-t border-white/5 bg-bg-secondary px-6 py-24 sm:px-8 sm:py-32"
+      className="relative border-t border-white/5 bg-bg-secondary py-24 sm:py-32"
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+      <div className="site-container grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <motion.div
           variants={staggerChildren(0.1)}
           initial="hidden"

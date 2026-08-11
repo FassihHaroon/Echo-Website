@@ -1,7 +1,12 @@
 "use client";
 
 import { useRef, type ReactNode, type MouseEvent } from "react";
+import Link from "next/link";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+
+// Routed through Link so cross-page targets (e.g. "/#contact" from a legal
+// page) navigate client-side and still land on the hash.
+const MotionLink = motion.create(Link);
 
 type MagneticButtonProps = {
   href: string;
@@ -16,7 +21,7 @@ export default function MagneticButton({
   variant = "primary",
   className = "",
 }: MagneticButtonProps) {
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLAnchorElement | null>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { damping: 20, stiffness: 200, mass: 0.4 });
@@ -37,15 +42,17 @@ export default function MagneticButton({
     y.set(0);
   };
 
+  // Padding/font-size are in the transition so callers (the navbar) can resize
+  // the button on scroll; transform stays out of it, that's the magnetic spring.
   const base =
-    "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors duration-300";
+    "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-[color,background-color,border-color,padding,font-size] duration-300";
   const variants = {
     primary: "bg-foreground text-bg hover:bg-silver",
     secondary: "border border-white/15 text-foreground hover:border-white/40",
   };
 
   return (
-    <motion.a
+    <MotionLink
       ref={ref}
       href={href}
       style={{ x: springX, y: springY }}
@@ -54,6 +61,6 @@ export default function MagneticButton({
       className={`${base} ${variants[variant]} ${className}`}
     >
       {children}
-    </motion.a>
+    </MotionLink>
   );
 }

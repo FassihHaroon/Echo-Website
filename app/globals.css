@@ -44,6 +44,19 @@
   box-sizing: border-box;
 }
 
+/* Single shared page container. Wide enough to use large displays instead of
+   stranding content in a 1152px column, with gutters that scale down to phones.
+   Reading columns stay narrow via max-w-* on the text blocks themselves —
+   it lives in the components layer so those utilities still win. */
+@layer components {
+  .site-container {
+    width: 100%;
+    max-width: 1760px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 5rem);
+  }
+}
+
 html {
   scroll-behavior: auto;
 }

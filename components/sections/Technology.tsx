@@ -9,9 +9,9 @@ export default function Technology() {
   return (
     <section
       id="technology"
-      className="relative border-t border-white/5 bg-bg-secondary px-6 py-24 sm:px-8 sm:py-32"
+      className="relative border-t border-white/5 bg-bg-secondary py-24 sm:py-32"
     >
-      <div className="mx-auto w-full max-w-4xl">
+      <div className="site-container max-w-5xl">
         <motion.div
           variants={fadeUp}
           initial="hidden"

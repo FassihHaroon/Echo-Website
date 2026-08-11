@@ -36,7 +36,7 @@ const PROBLEMS = [
 export default function EchoCaseStudyPage() {
   return (
     <article className="relative">
-      <div className="mx-auto w-full max-w-4xl px-6 pt-24 sm:px-8 sm:pt-32">
+      <div className="site-container max-w-4xl pt-24 sm:pt-32">
         <Breadcrumbs items={[{ label: "Echo Case Study", href: "/case-studies/echo" }]} />
 
         <span className="mt-8 block text-xs uppercase tracking-[0.2em] text-silver-dim">
@@ -53,7 +53,7 @@ export default function EchoCaseStudyPage() {
         </p>
       </div>
 
-      <section className="mx-auto mt-20 w-full max-w-4xl px-6 sm:px-8">
+      <section className="site-container mt-20 max-w-4xl">
         <h2 className="text-sm font-medium uppercase tracking-[0.15em] text-foreground">
           The Problem
         </h2>
@@ -71,7 +71,7 @@ export default function EchoCaseStudyPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-4xl px-6 sm:px-8">
+      <section className="site-container mt-24 max-w-4xl">
         <h2 className="text-sm font-medium uppercase tracking-[0.15em] text-foreground">
           Why Echo Becomes Handy
         </h2>
@@ -85,7 +85,7 @@ export default function EchoCaseStudyPage() {
         </p>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-6xl px-6 sm:px-8">
+      <section className="site-container mt-24">
         <h2 className="text-sm font-medium uppercase tracking-[0.15em] text-foreground">
           A Mastered Product
         </h2>
@@ -125,7 +125,7 @@ export default function EchoCaseStudyPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-4xl px-6 pb-24 sm:px-8 sm:pb-32">
+      <section className="site-container mt-24 max-w-4xl pb-24 sm:pb-32">
         <div className="rounded-3xl border border-white/10 bg-bg-secondary/60 p-10 text-center sm:p-14">
           <h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
             See Echo answer a real call.

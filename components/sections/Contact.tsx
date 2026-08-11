@@ -64,9 +64,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative border-t border-white/5 bg-bg px-6 py-24 sm:px-8 sm:py-32"
+      className="relative border-t border-white/5 bg-bg py-24 sm:py-32"
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
+      <div className="site-container grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
         <motion.div
           variants={staggerChildren(0.1)}
           initial="hidden"
@@ -111,7 +111,7 @@ export default function Contact() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           onSubmit={handleSubmit}
-          className="flex flex-col gap-5"
+          className="flex w-full max-w-2xl flex-col gap-5"
         >
           {/* Honeypot field — hidden from real users, left blank */}
           <input

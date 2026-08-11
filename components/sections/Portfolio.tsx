@@ -10,9 +10,9 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative border-t border-white/5 bg-bg px-6 py-24 sm:px-8 sm:py-32"
+      className="relative border-t border-white/5 bg-bg py-24 sm:py-32"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="site-container">
         <motion.div
           variants={fadeUp}
           initial="hidden"

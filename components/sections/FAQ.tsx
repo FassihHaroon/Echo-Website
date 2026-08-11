@@ -48,14 +48,14 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative border-t border-white/5 bg-bg px-6 py-24 sm:px-8 sm:py-32"
+      className="relative border-t border-white/5 bg-bg py-24 sm:py-32"
     >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="site-container max-w-4xl">
         <motion.div
           variants={fadeUp}
           initial="hidden"

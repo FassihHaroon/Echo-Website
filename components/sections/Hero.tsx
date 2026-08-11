@@ -61,7 +61,7 @@ export default function Hero() {
         variants={staggerChildren(0.12, 0.4)}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-8"
+        className="site-container relative z-10"
       >
         <motion.p
           variants={fadeUpStagger()}
@@ -72,7 +72,7 @@ export default function Hero() {
 
         <motion.h1
           variants={fadeUpStagger()}
-          className="max-w-4xl text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-tight text-foreground"
+          className="max-w-5xl text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-tight text-foreground"
         >
           Industrial AI software
           <br />
