@@ -168,14 +168,34 @@ export type TeamMember = {
   name: string;
   role: string;
   photo?: string;
+  bio?: string;
 };
 
-// Placeholder roster — swap in real names, roles, and photos (drop images in
-// /public/team/ and set `photo` to the path) whenever they're ready.
 export const TEAM_MEMBERS: TeamMember[] = [
-  { name: "Add Name", role: "Founder / Role" },
-  { name: "Add Name", role: "Engineering / Role" },
-  { name: "Add Name", role: "Product / Role" },
+  {
+    name: "Irtaza Ali",
+    role: "Co-founder",
+    photo: "/Irtaza.jpeg",
+    bio: "Three-plus years in generative AI and software quality, and still happiest with his hands in the code. He led the engineering behind Cosecant and built a good deal of it himself.",
+  },
+  {
+    name: "Sayyaf Nadir",
+    role: "Co-founder",
+    photo: "/sayyaf.jpeg",
+    bio: "A physics major who found his way into cybersecurity and compliance. He has founded and sold multiple solutions to businesses, and he will keep turning a problem over until the cleanest answer falls out.",
+  },
+  {
+    name: "Fassih Haroon",
+    role: "Engineering Lead",
+    photo: "/Image.jpeg",
+    bio: "The idea for Cosecant started with him. A CS graduate with fundamentals he actually uses, he leads our engineering and holds the line on clean design and the simplest solution that works.",
+  },
+  {
+    name: "Hifza Chaudhry",
+    role: "Operations Head",
+    photo: "/hifza.jpeg",
+    bio: "She runs onboarding and gives the demos, so she is usually the first person a new client meets. A researcher by background, with the practical operations experience to make the handover feel easy.",
+  },
 ];
 
 export type TechLayerData = {
